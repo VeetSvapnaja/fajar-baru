@@ -1,0 +1,9 @@
+*.~
+*.dvi
+*.aux
+*.ps
+*.toc
+*.tex~
+*.xwm
+*.log
+*.pdf
