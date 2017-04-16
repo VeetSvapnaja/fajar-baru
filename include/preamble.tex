@@ -1,0 +1,21 @@
+\input{../include/title}
+\input{../include/font}
+\input{../include/style}
+\input{../include/draft}
+\input{../include/other}
+
+\begin{document}
+\assignpagestyle{\chapter}{style2}
+\pagestyle{empty}
+\title{JUDUL BUKU}
+%\subtitle{Pembicaraan diberikan 1972\\
+%          Seri ceramah Inggris}
+\date{Tanggal Terjemah\\
+      \today}
+\maketitle
+
+
+\pagestyle{mystyle}
+\pagenumbering{arabic} % Roman numerals
+\setcounter{page}{1}
+\renewcommand{\theHchapter}{\arabic{chapter}}
