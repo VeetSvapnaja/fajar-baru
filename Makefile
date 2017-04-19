@@ -15,26 +15,26 @@ OUT_PDF       = $(OUT_DIR)/pdf
 
 all: directories pdf html
 
-pdf: $(SOURCES) $(PDFS)
+pdf: $(SOURCES)
 
 html: $(SOURCES) $(HTML)
 
-clean: rmaux
-	rm -f $(PDFS) $(HTML)
+clean: 
+	rm -rf $(OUT_DIR)
 
 directories: ${OUT_DIR}
 
 ${OUT_DIR}:
 	${MKDIR_P} ${OUT_DIR}
-${OUT_HTML}:
+${OUT_HTML}: $(OUT_DIR)
 	${MKDIR_P} ${OUT_HTML}
-${OUT_PDF}:
+${OUT_PDF}: $(OUT_DIR)
 	${MKDIR_P} ${OUT_PDF}
 
 rmaux:
 	rm -f $(AUXFILES)
 
-pdf: $(SOURCES) $(OUT_PDF)
+pdf: clean $(SOURCES) $(OUT_PDF)
 	$(TEX) -output-directory=$(OUT_PDF) $(SOURCES)
 
 html: $(OUT_HTML)
