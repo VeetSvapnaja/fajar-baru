@@ -7,3 +7,4 @@
 *.xwm
 *.log
 *.pdf
+build/*

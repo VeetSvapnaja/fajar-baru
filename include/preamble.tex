@@ -1,8 +1,8 @@
-\input{../include/title}
-\input{../include/font}
-\input{../include/style}
-\input{../include/draft}
-\input{../include/other}
+\input{include/title}
+\input{include/font}
+\input{include/style}
+\input{include/draft}
+\input{include/other}
 
 \begin{document}
 \assignpagestyle{\chapter}{style2}
@@ -18,4 +18,4 @@
 \pagestyle{mystyle}
 \pagenumbering{arabic} % Roman numerals
 \setcounter{page}{1}
-\renewcommand{\theHchapter}{\arabic{chapter}}
+\ifdefined\theHchapter\else\newcommand\theHchapter{\arabic{chapter}}\fi

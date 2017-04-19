@@ -6,7 +6,7 @@ CSS_DIR	      = inclue/tex4ht/css
 AUXFILES      = $(wildcard *.aux *.tmp *.toc *.xref *.lg *.idv *.dvi *.4tc *.4ct *.out *.log)
 SOURCES       = book.tex
 PDFS          = $(SOURCES:.tex=.pdf)
-HTML          = $(SOURCES:.tex=.html)
+HTMLS          = $(SOURCES:.tex=.html)
 MKDIR_P	      = mkdir -p
 OUT_DIR	      = build
 OUT_HTML      = $(OUT_DIR)/html
@@ -34,9 +34,9 @@ ${OUT_PDF}: $(OUT_DIR)
 rmaux:
 	rm -f $(AUXFILES)
 
-pdf: clean $(SOURCES) $(OUT_PDF)
+pdf: clean $(SOURCES)
 	$(TEX) -output-directory=$(OUT_PDF) $(SOURCES)
 
-html: $(OUT_HTML)
+html: clean $(SOURCES)
 	$(HTMLTEX) -c $(CUSTOMCSS) $(SOURCES) -d $(OUT_HTML)
 	cp -r $(CSS_DIR) $(OUT_HTML)
