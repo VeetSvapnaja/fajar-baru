@@ -1,8 +1,8 @@
 TEX           = lualatex
 HTMLTEX       = make4ht
 HTMLTEX_FLAGS = 'html, NoFonts'
-CUSTOMCSS     = ../tex4ht/enhanced.cfg
-CSS_DIR	      = ../tex4ht/css
+CUSTOMCSS     = include/tex4ht/enhanced.cfg
+CSS_DIR	      = inclue/tex4ht/css
 AUXFILES      = $(wildcard *.aux *.tmp *.toc *.xref *.lg *.idv *.dvi *.4tc *.4ct *.out *.log)
 SOURCES       = book.tex
 PDFS          = $(SOURCES:.tex=.pdf)
